@@ -202,7 +202,18 @@ console.log("_______________________________");
 //    Use toFixed(2) em todos os valores.
 
 // → Seu código aqui:
-
+const lerTeclado = require('readline-sync');
+let user = {
+  PERGUNTA1: lerTeclado.questionFloat("valor total da compra?"),
+  pergunta2: lerTeclado.questionFloat("valor entregue pelo cliente?")
+}
+let valorEntregue = 100
+let totalCompra = 200
+console.log(totalCompra - valorEntregue)
+let troco = 100
+console.log(`total da compra: R$${totalCompra.toFixed(2)}`)
+console.log(`Valor entregue:   R$ ${valorEntregue.toFixed(2)}`)
+console.log(`Troco:            R$ ${troco.toFixed(2)}`)
 
 console.log("_______________________________");
 
@@ -218,7 +229,18 @@ let notas = [7.5, 8.2, 6.5, 9.0];
 let idades = [15, 22, 30, 18, 25];
 
 // → Seu código aqui:
+let total = precos.reduce((soma, preco) => soma + preco, 0);
+console.log("Total dos preços:", total.toFixed(2));
 
+let somaNotas = notas.reduce((soma, nota) => soma + nota, 0);
+let media = somaNotas / notas.length;
+console.log("Média das notas:", media.toFixed(2));
+
+let maiorIdade = Math.max(...idades);
+let menorIdade = Math.min(...idades);
+
+console.log("Maior idade:", maiorIdade);
+console.log("Menor idade:", menorIdade);
 
 console.log("_______________________________");
 
@@ -248,6 +270,28 @@ let turma = {
 // e) Exiba a nota mais alta e a mais baixa da turma
 
 // → Seu código aqui:
+let turma1 = {
+  aluno1: { nome: "João", notas: [7, 8, 9] },
+  aluno2: { nome: "Maria", notas: [6, 7, 8] },
+  aluno3: { nome: "Pedro", notas: [5, 9, 7] }
+};
+let m1 = (7 + 8 + 9) / 3;
+let m2 = (6 + 7 + 8) / 3;
+let m3 = (5 + 9 + 7) / 3;
 
+console.log("João média:", m1);
+console.log("Maria média:", m2);
+console.log("Pedro média:", m3);
+
+let mediaGeral = (7 + 8 + 9 + 6 + 7 + 8 + 5 + 9 + 7) / 9;
+console.log("Média geral:", mediaGeral);
+
+console.log("João:", Math.max(7, 8, 9), Math.min(7, 8, 9));
+console.log("Maria:", Math.max(6, 7, 8), Math.min(6, 7, 8));
+console.log("Pedro:", Math.max(5, 9, 7), Math.min(5, 9, 7));
+
+console.log("Turma maior:", Math.max(7, 8, 9, 6, 7, 8, 5, 9, 7));
+console.log("Turma menor:", Math.min(7, 8, 9, 6, 7, 8, 5, 9, 7));
+console.log("_______________________________");
 
 console.log("_______________________________");
